@@ -1,0 +1,16 @@
+.odontograma {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5px;
+  }
+  
+  .odontograma div {
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .odontograma div.selected {
+    background-color: #aaffaa; /* Puedes personalizar los estilos según tus necesidades */
+  }
+  

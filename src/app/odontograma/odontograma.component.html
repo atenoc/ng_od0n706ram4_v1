@@ -1,0 +1,5 @@
+<div class="odontograma">
+    <div *ngFor="let diente of dientes; let i = index" (click)="marcarDiente(i)" [class.selected]="diente">
+      {{ i + 1 }}
+    </div>
+  </div>
