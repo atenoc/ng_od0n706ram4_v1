@@ -1,5 +1,32 @@
-<div class="odontograma">
-    <div *ngFor="let diente of dientes; let i = index" (click)="marcarDiente(i)" [class.selected]="diente">
-      {{ i + 1 }}
+
+<div class="container">
+    <h2>Canvas Component</h2>
+    <div class="palette">
+
+        <div class="brush-controls">
+            <label for="brushSize">Brush Size: </label>
+            <button class="btn btn-primary" (click)="decreaseBrushSize()">-</button>
+            {{ brushSize }}
+            <button class="btn btn-primary" (click)="increaseBrushSize()">+</button>
+        </div>
+        <hr>
+        <div class="brush-controls">
+            <label for="brushSize">Zoom: </label>
+            <button class="btn btn-primary" (click)="zoomOut()">-</button>.
+            <button class="btn btn-primary" (click)="zoomIn()">+</button>
+        </div>
+        <hr>
+        <div class="color-palette">
+            <button *ngFor="let color of colorPalette" (click)="selectColor(color)" [style.background-color]="color"></button>
+        </div>
+
+        <button *ngIf="!isEraserMode" (click)="toggleEraserMode()">Borrador</button>
+        <button *ngIf="isEraserMode" (click)="toggleEraserMode()">Pincel</button>
+
+    </div>
+    <div class="canvas-container">
+        <canvas #canvas></canvas>
     </div>
   </div>
+  
+  
